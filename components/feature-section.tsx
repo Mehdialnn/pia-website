@@ -1,4 +1,5 @@
-import { Check } from "lucide-react"
+import { Check } from "lucide-react";
+import Link from "next/link";
 
 export default function FeatureSection() {
   return (
@@ -12,8 +13,8 @@ export default function FeatureSection() {
               Zero Hassle
             </h2>
             <p className="text-base sm:text-lg text-zinc-400 mb-6 sm:mb-8 leading-relaxed">
-              Let clients book calls at your available times. Automatic reminders, calendar sync, and seamless payment
-              processing.
+              Let clients book calls at your available times. Automatic
+              reminders, calendar sync, and seamless payment processing.
             </p>
 
             <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
@@ -31,9 +32,15 @@ export default function FeatureSection() {
               </li>
             </ul>
 
-            <button className="px-6 sm:px-8 py-3 sm:py-4 bg-zinc-900 text-white text-sm sm:text-base font-medium rounded-lg border border-zinc-700 hover:bg-zinc-800 transition-all duration-300 hover:border-zinc-600 w-full sm:w-auto">
-              Start Earning Today
-            </button>
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://piacall.io/"
+            >
+              <button className="cursor-pointer px-6 sm:px-8 py-3 sm:py-4 bg-zinc-900 text-white text-sm sm:text-base font-medium rounded-lg border border-zinc-700 hover:bg-zinc-800 transition-all duration-300 hover:border-zinc-600 w-full sm:w-auto">
+                Start Earning Today
+              </button>
+            </Link>
           </div>
 
           {/* MOCKUP SIDE */}
@@ -43,12 +50,18 @@ export default function FeatureSection() {
               <div className="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 transform rotate-2 hover:rotate-0 transition-transform duration-500 min-w-[420px] sm:min-w-0 mx-auto">
                 <div className="bg-zinc-800 px-4 sm:px-6 py-4 flex items-center justify-between border-b border-zinc-700">
                   <div className="flex items-center gap-3">
-                    <img src="/images/piacall-logo.png" alt="PIA" className="w-8 h-8 object-contain" />
+                    <img
+                      src="/images/piacall-logo.png"
+                      alt="PIA"
+                      className="w-8 h-8 object-contain"
+                    />
                     <span className="text-white font-semibold">PIA</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-32 sm:w-40 h-8 bg-zinc-700 rounded-lg px-3 flex items-center">
-                      <span className="text-zinc-400 text-xs sm:text-sm">Search...</span>
+                      <span className="text-zinc-400 text-xs sm:text-sm">
+                        Search...
+                      </span>
                     </div>
                     <div className="w-8 h-8 bg-zinc-700 rounded-full" />
                   </div>
@@ -57,9 +70,15 @@ export default function FeatureSection() {
                 <div className="flex">
                   <div className="w-40 sm:w-48 bg-zinc-800 p-4 border-r border-zinc-700">
                     <div className="flex items-center gap-3 mb-6">
-                      <img src="/images/piacall-logo.png" alt="PIA" className="w-10 h-10 object-contain" />
+                      <img
+                        src="/images/piacall-logo.png"
+                        alt="PIA"
+                        className="w-10 h-10 object-contain"
+                      />
                       <div>
-                        <p className="text-white text-sm font-semibold">Your Profile</p>
+                        <p className="text-white text-sm font-semibold">
+                          Your Profile
+                        </p>
                       </div>
                     </div>
 
@@ -67,9 +86,15 @@ export default function FeatureSection() {
                       <div className="px-3 py-2 bg-pink-500/20 rounded-lg text-pink-400 text-sm font-medium">
                         Dashboard
                       </div>
-                      <div className="px-3 py-2 text-zinc-400 text-sm hover:text-white transition-colors">Bookings</div>
-                      <div className="px-3 py-2 text-zinc-400 text-sm hover:text-white transition-colors">Earnings</div>
-                      <div className="px-3 py-2 text-zinc-400 text-sm hover:text-white transition-colors">Settings</div>
+                      <div className="px-3 py-2 text-zinc-400 text-sm hover:text-white transition-colors">
+                        Bookings
+                      </div>
+                      <div className="px-3 py-2 text-zinc-400 text-sm hover:text-white transition-colors">
+                        Earnings
+                      </div>
+                      <div className="px-3 py-2 text-zinc-400 text-sm hover:text-white transition-colors">
+                        Settings
+                      </div>
                     </nav>
                   </div>
 
@@ -91,7 +116,9 @@ export default function FeatureSection() {
                     </div>
 
                     <div>
-                      <p className="text-zinc-400 text-sm mb-3">Earnings Trend</p>
+                      <p className="text-zinc-400 text-sm mb-3">
+                        Earnings Trend
+                      </p>
                       <div className="h-32 bg-zinc-800/50 rounded-lg p-4 relative overflow-hidden">
                         <svg className="w-full h-full" viewBox="0 0 200 80">
                           <polyline
@@ -112,5 +139,5 @@ export default function FeatureSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

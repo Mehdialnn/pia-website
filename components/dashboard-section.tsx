@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function DashboardSection() {
   return (
     <section className="bg-[#050505] py-24 px-6">
@@ -20,17 +22,26 @@ export default function DashboardSection() {
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-light text-white mb-4 sm:mb-6 leading-tight tracking-tight">
               Track Your Earnings
               <br />
-              <span className="text-zinc-400 font-extralight">—Real-Time Insights</span>
+              <span className="text-zinc-400 font-extralight">
+                —Real-Time Insights
+              </span>
             </h2>
             <p className="text-base sm:text-lg text-zinc-400 mb-6 sm:mb-8 leading-relaxed font-light">
-              Monitor your call revenue, track bookings, and manage your schedule all from one beautiful dashboard
+              Monitor your call revenue, track bookings, and manage your
+              schedule all from one beautiful dashboard
             </p>
-            <button className="px-8 py-4 glass-strong text-white font-light rounded-lg neon-border hover:bg-zinc-900/50 transition-all duration-300">
-              Get Started
-            </button>
+            <Link
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://piacall.io/"
+            >
+              <button className="px-8 py-4 glass-strong text-white font-light rounded-lg neon-border hover:bg-zinc-900/50 transition-all duration-300 cursor-pointer">
+                Get Started
+              </button>
+            </Link>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,6 +1,7 @@
 import { Particles } from "@/components/magicui/particles";
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -40,16 +41,22 @@ export default function HeroSection() {
         </p>
 
         <div className="flex justify-center">
-          <ShimmerButton
-            shimmerColor="#ffffff"
-            shimmerSize="0.1em"
-            shimmerDuration="2s"
-            borderRadius="9999px"
-            background="linear-gradient(to right, #ec4899, #f43f5e)"
-            className="shadow-2xl"
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://piacall.io/"
           >
-            Try pia Now
-          </ShimmerButton>
+            <ShimmerButton
+              shimmerColor="#ffffff"
+              shimmerSize="0.1em"
+              shimmerDuration="2s"
+              borderRadius="9999px"
+              background="linear-gradient(to right, #ec4899, #f43f5e)"
+              className="shadow-2xl"
+            >
+              Try pia Now
+            </ShimmerButton>
+          </Link>
         </div>
       </div>
 
