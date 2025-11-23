@@ -24,25 +24,18 @@ export default function Footer() {
             <a
               href="mailto:marion@piacall.io"
               className="text-zinc-400 hover:text-white transition-colors text-sm"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Contact
             </a>
-
             <a
-              href="https://piacall.io/legal"
+              href="/privacy-policy"
               className="text-zinc-400 hover:text-white transition-colors text-sm"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Privacy Policy
             </a>
             <a
-              href="https://piacall.io/legal"
+              href="/terms-of-service"
               className="text-zinc-400 hover:text-white transition-colors text-sm"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               Terms of Service
             </a>
