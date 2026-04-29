@@ -22,15 +22,15 @@ export default function NumberTicker({
   const ref = useRef<HTMLSpanElement>(null)
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const hasAnimatedRef = useRef(false)
   const [displayValue, setDisplayValue] = useState(direction === "down" ? value : startValue)
-  const [hasAnimated, setHasAnimated] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            setHasAnimated(true)
+          if (entry.isIntersecting && !hasAnimatedRef.current) {
+            hasAnimatedRef.current = true
             const fromValue = direction === "down" ? value : startValue
             setDisplayValue(fromValue)
 
@@ -74,7 +74,7 @@ export default function NumberTicker({
         clearInterval(intervalRef.current)
       }
     }
-  }, [value, direction, startValue, delay, hasAnimated])
+  }, [value, direction, startValue, delay])
 
   return (
     <span className={cn("inline-block tabular-nums text-black dark:text-white tracking-wider", className)} ref={ref}>

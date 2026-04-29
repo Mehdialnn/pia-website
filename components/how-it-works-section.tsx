@@ -33,7 +33,7 @@ export default function HowItWorksSection() {
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
             How It Works
           </h2>
-          <p className="text-base sm:text-lg text-zinc-400">Get started with PIA in three simple steps</p>
+          <p className="text-base sm:text-lg text-zinc-400">Get started with Pia in three simple steps</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">

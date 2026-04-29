@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "pia - Monetize Your Calls",
+  title: "Pia - Monetize Your Calls",
   description:
     "Get paid for your expertise. Schedule calls, set your rates, and manage everything in one seamless platform.",
   generator: "v0.app",

@@ -38,7 +38,7 @@ function MinimalContent() {
 
       <Link target="_blank" rel="noopener noreferrer" href={APP_STORE_URL}>
         <button className="cursor-pointer px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-sm sm:text-base font-medium rounded-lg hover:opacity-90 transition-all duration-300 w-full sm:w-auto">
-          Download pia for iOS
+          Download Pia for iOS
         </button>
       </Link>
     </div>
@@ -53,7 +53,7 @@ function FeatureVisual() {
         <div className="relative rounded-[2rem] border border-zinc-800 bg-zinc-900 p-4">
           <Image
             src="/images/app-dashboard.png"
-            alt="pia App Dashboard"
+            alt="Pia App Dashboard"
             width={360}
             height={720}
             className="w-full h-auto object-contain rounded-[1.5rem]"
@@ -77,7 +77,7 @@ function FeatureVisual() {
           <div className="relative w-[230px] md:w-[250px] translate-y-6">
             <Image
               src="/images/app-settings.png"
-              alt="pia settings screen"
+              alt="Pia settings screen"
               width={250}
               height={520}
               className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(236,72,153,0.25)]"
@@ -86,7 +86,7 @@ function FeatureVisual() {
           <div className="relative w-[260px] md:w-[290px]">
             <Image
               src="/images/app-dashboard.png"
-              alt="pia dashboard screen"
+              alt="Pia dashboard screen"
               width={290}
               height={600}
               className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(236,72,153,0.35)]"

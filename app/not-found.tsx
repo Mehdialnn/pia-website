@@ -23,7 +23,7 @@ export default function NotFound() {
         <div className="flex justify-center mb-8 animate-fade-in">
           <Image
             src="/images/piacall-logo.png"
-            alt="pia Logo"
+            alt="Pia Logo"
             width={128}
             height={128}
             className="w-24 h-24 md:w-32 md:h-32 drop-shadow-[0_0_30px_rgba(236,72,153,0.6)]"

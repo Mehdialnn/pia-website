@@ -8,14 +8,14 @@ export default function FAQSection() {
 
   const faqs = [
     {
-      question: "What is pia?",
+      question: "What is Pia?",
       answer:
         "Pia is a platform designed to help consultants and coaches seamlessly connect with their clients through secure video and voice calls. It offers tools for scheduling, client management, and secure communication, as well as payment management.",
     },
     {
       question: "How can my clients call me?",
       answer:
-        "Once you've created your profile, Pia generates a personal link. Share the link with your clients - from there, they can either call you if you're available or easily schedule an appointment.",
+        "Once you've created your profile, Pia generates a personal link. Share it with clients and they can book or join instantly from their browser. No app download required for clients.",
     },
     {
       question: "How do I get paid?",
@@ -25,7 +25,12 @@ export default function FAQSection() {
     {
       question: "What are the fees?",
       answer:
-        "Pia charges a 20% fee on each transaction processed through the platform. This fee covers the cost of maintaining secure payments, providing premium features like scheduling and encrypted calls, and ensuring a seamless experience for both you and your clients.",
+        "Selected early creators can access a 0% intro platform fee. Standard pricing is 20% per transaction, and your fee setup is always visible before you start charging clients.",
+    },
+    {
+      question: "Do my clients need to install Pia?",
+      answer:
+        "No. Clients can join directly from your booking/call link in any modern browser. You can start calls without forcing app installation on their side.",
     },
   ]
 

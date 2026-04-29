@@ -23,7 +23,7 @@ export default function HeroSection() {
         <div className="flex justify-center mb-8 animate-fade-in">
           <Image
             src="/images/piacall-logo.png"
-            alt="pia Logo"
+            alt="Pia Logo"
             width={128}
             height={128}
             className="w-24 h-24 md:w-32 md:h-32 drop-shadow-[0_0_30px_rgba(236,72,153,0.6)]"
@@ -38,7 +38,7 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-xl md:text-2xl text-zinc-400 mb-10 max-w-3xl mx-auto leading-relaxed font-light">
-          pia helps you get paid for your expertise. Schedule calls, set your
+          Pia helps you get paid for your expertise. Schedule calls, set your
           rates, and manage everything in one seamless platform.
         </p>
 
@@ -70,7 +70,7 @@ export default function HeroSection() {
           <div className="relative w-[260px] h-[530px]">
             <Image
               src="/images/app-dashboard.png"
-              alt="pia Dashboard"
+              alt="Pia Dashboard"
               fill
               className="object-contain"
               priority
@@ -84,7 +84,7 @@ export default function HeroSection() {
           <div className="relative w-[280px] h-[570px]">
             <Image
               src="/images/app-splash.png"
-              alt="pia Monetize Your Calls"
+              alt="Pia Monetize Your Calls"
               fill
               className="object-contain"
               priority
@@ -98,7 +98,7 @@ export default function HeroSection() {
           <div className="relative w-[260px] h-[530px]">
             <Image
               src="/images/app-settings.png"
-              alt="pia Settings"
+              alt="Pia Settings"
               fill
               className="object-contain"
               priority

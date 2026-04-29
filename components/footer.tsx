@@ -8,12 +8,12 @@ export default function Footer() {
           <div className="flex items-center gap-2">
             <Image
               src="/images/piacall-logo.png"
-              alt="PIA Logo"
+              alt="Pia Logo"
               width={32}
               height={32}
               className="w-8 h-8"
             />
-            <span className="text-white text-2xl font-bold">pia</span>
+            <span className="text-white text-2xl font-bold">Pia</span>
           </div>
 
           <p className="text-zinc-400 text-sm text-center md:text-left">
@@ -22,7 +22,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-zinc-800 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-zinc-400 text-sm">© PIA 2025</p>
+          <p className="text-zinc-400 text-sm">© Pia 2025</p>
 
           <div className="flex items-center gap-6">
             <a

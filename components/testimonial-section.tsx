@@ -1,48 +1,43 @@
 "use client"
 
-import Marquee from "@/components/magicui/marquee"
-
 const testimonials = [
   {
-    quote: "PiaCall has completely transformed how I monetize my consulting expertise",
-    name: "Sarah Mitchell",
+    quote: "Pia transformed how I monetize my consulting time without adding admin overhead.",
+    name: "Sarah M.",
     role: "Business Consultant",
     initial: "S",
   },
   {
-    quote: "The best platform for coaching calls I've ever used",
-    name: "Marcus Chen",
+    quote: "Bookings, calls, and payouts finally happen in one clean workflow.",
+    name: "Marcus C.",
     role: "Career Coach",
     initial: "M",
   },
   {
-    quote: "Increased my monthly revenue by 3x in just 2 months",
-    name: "Elena Rodriguez",
+    quote: "I started getting paid for calls consistently instead of chasing invoices.",
+    name: "Elena R.",
     role: "Marketing Strategist",
     initial: "E",
   },
   {
-    quote: "My clients love how easy it is to book time with me",
-    name: "David Park",
+    quote: "My clients book faster, and I can track every call revenue in one place.",
+    name: "David P.",
     role: "Tech Advisor",
     initial: "D",
   },
   {
-    quote: "Finally, a platform that handles everything seamlessly",
-    name: "Jessica Wong",
+    quote: "The onboarding was quick and I launched paid calls the same week.",
+    name: "Jessica W.",
     role: "Legal Consultant",
     initial: "J",
   },
   {
-    quote: "The instant payments feature is a game changer",
-    name: "Ahmed Hassan",
+    quote: "Pia helped me turn demand into real paid sessions, not just DMs.",
+    name: "Ahmed H.",
     role: "Financial Advisor",
     initial: "A",
   },
 ]
-
-const firstRow = testimonials.slice(0, testimonials.length / 2)
-const secondRow = testimonials.slice(testimonials.length / 2)
 
 const TestimonialCard = ({
   quote,
@@ -85,7 +80,7 @@ export default function TestimonialSection() {
             <br />
             Trusted by Clients
           </h2>
-          <p className="text-base sm:text-lg text-zinc-400">See what professionals are saying about PIA</p>
+          <p className="text-base sm:text-lg text-zinc-400">See what professionals are saying about Pia</p>
         </div>
 
         <div className="md:hidden -mx-4 px-4 overflow-x-auto pb-2">
@@ -96,19 +91,10 @@ export default function TestimonialSection() {
           </div>
         </div>
 
-        <div className="relative hidden md:flex flex-col items-center justify-center overflow-hidden">
-          <Marquee pauseOnHover className="[--duration:48s]">
-            {firstRow.map((testimonial, idx) => (
-              <TestimonialCard key={idx} {...testimonial} />
-            ))}
-          </Marquee>
-          <Marquee reverse pauseOnHover className="[--duration:48s] mt-4">
-            {secondRow.map((testimonial, idx) => (
-              <TestimonialCard key={idx} {...testimonial} />
-            ))}
-          </Marquee>
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-[#0A0A0A]"></div>
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-[#0A0A0A]"></div>
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-6xl mx-auto">
+          {testimonials.map((testimonial, idx) => (
+            <TestimonialCard key={idx} {...testimonial} className="w-full cursor-default" />
+          ))}
         </div>
       </div>
     </section>

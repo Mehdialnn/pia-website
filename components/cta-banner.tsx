@@ -33,11 +33,11 @@ export default function CTABanner() {
               Your Expertise Today
             </h2>
             <p className="text-base sm:text-xl text-zinc-400 mb-8 sm:mb-10">
-              Join thousands of professionals monetizing their time with PIA
+              Join thousands of professionals monetizing their time with Pia
             </p>
             <div className="flex flex-col items-center gap-4">
-              <p className="text-center text-lg sm:text-2xl font-normal text-white">Download pia on iOS</p>
-              <div className="w-full flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+              <p className="text-center text-lg sm:text-2xl font-normal text-white">Download Pia on iOS</p>
+              <div className="w-full flex justify-center items-center">
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
@@ -61,34 +61,7 @@ export default function CTABanner() {
                     <p className="text-lg sm:text-xl font-semibold">App Store</p>
                   </div>
                 </a>
-                <div
-                  aria-disabled="true"
-                  className="flex w-full sm:w-fit flex-row items-center justify-center gap-2 sm:gap-3 rounded-2xl border border-zinc-700/70 px-4 py-3 text-zinc-400 bg-zinc-900/30 backdrop-blur-sm cursor-not-allowed"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 24 24"
-                    className="size-8 sm:size-10"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="m3.637 3.434l8.74 8.571l-8.675 8.65a2.1 2.1 0 0 1-.326-.613a2.5 2.5 0 0 1 0-.755V4.567c-.026-.395.065-.79.26-1.133m12.506 4.833l-2.853 2.826L4.653 2.6c.28-.097.58-.124.873-.078c.46.126.899.32 1.302.573l7.816 4.325c.508.273 1.003.56 1.498.847M13.29 12.93l2.839 2.788l-2.058 1.146l-6.279 3.49c-.52.287-1.042.561-1.55.874a1.8 1.8 0 0 1-1.472.195zm7.36-.925a1.92 1.92 0 0 1-.99 1.72l-2.346 1.302l-3.087-3.022l3.1-3.074l2.333 1.302c.325.169.6.43.782.753c.182.324.268.695.208 1.019"
-                    />
-                  </svg>
-                  <div className="grid -space-y-1 text-left">
-                    <p className="text-xs text-zinc-500">ANDROID</p>
-                    <p className="text-lg sm:text-xl font-semibold">Not Available Yet</p>
-                  </div>
-                </div>
               </div>
-              <a
-                href="mailto:marion@piacall.io?subject=Notify%20me%20for%20Android&body=Hi%20PIA%20team%2C%20please%20notify%20me%20when%20the%20Android%20app%20is%20available."
-                className="text-sm text-zinc-400 hover:text-white transition-colors underline underline-offset-4"
-              >
-                Notify me when Android launches
-              </a>
             </div>
           </div>
         </div>

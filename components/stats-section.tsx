@@ -49,7 +49,7 @@ export default function StatsSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 max-w-7xl mx-auto">
           <StatItem label="Early Users" value={350} suffix="+" description="Professionals already onboarded." />
           <StatItem label="Monthly Onboarding" value={100} suffix="" description="Priority setup slots available." />
-          <StatItem label="2026 Goal" value={10} suffix="K" description="Calls monetized through pia." />
+          <StatItem label="2026 Goal" value={10} suffix="K" description="Calls monetized through Pia." />
           <StatItem label="Intro Platform Fee" value={0} suffix="%" description="For selected early creators." />
         </div>
       </div>

@@ -12,7 +12,7 @@ export default function DashboardSection() {
               <div className="relative w-72 sm:w-80 rounded-[3rem] overflow-hidden shadow-2xl">
                 <Image
                   src="/images/app-transactions.png"
-                  alt="PIA Transactions Screen"
+                  alt="Pia Transactions Screen"
                   width={320}
                   height={650}
                   className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(236,72,153,0.3)]"
