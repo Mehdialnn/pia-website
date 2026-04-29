@@ -25,54 +25,6 @@ export function Particles({
   vx = 0,
   vy = 0,
 }: ParticlesProps) {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  const canvasContainerRef = useRef<HTMLDivElement>(null)
-  const context = useRef<CanvasRenderingContext2D | null>(null)
-  const circles = useRef<any[]>([])
-  const mousePosition = useRef({ x: 0, y: 0 })
-  const mouseMoveRef = useRef(false)
-  const canvasSize = useRef({ w: 0, h: 0 })
-  const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1
-
-  useEffect(() => {
-    if (canvasRef.current) {
-      context.current = canvasRef.current.getContext("2d")
-    }
-    initCanvas()
-    animate()
-    window.addEventListener("resize", initCanvas)
-
-    return () => {
-      window.removeEventListener("resize", initCanvas)
-    }
-  }, [color])
-
-  useEffect(() => {
-    onMouseMove()
-  }, [staticity, ease])
-
-  useEffect(() => {
-    initCanvas()
-  }, [refresh])
-
-  const initCanvas = () => {
-    resizeCanvas()
-    drawParticles()
-  }
-
-  const onMouseMove = () => {
-    if (canvasRef.current) {
-      const rect = canvasRef.current.getBoundingClientRect()
-      const { w, h } = canvasSize.current
-      const x = mousePosition.current.x - rect.left - w / 2
-      const y = mousePosition.current.y - rect.top - h / 2
-      const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2
-      if (inside) {
-        mouseMoveRef.current = true
-      }
-    }
-  }
-
   type Circle = {
     x: number
     y: number
@@ -86,7 +38,16 @@ export function Particles({
     magnetism: number
   }
 
-  const resizeCanvas = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const canvasContainerRef = useRef<HTMLDivElement>(null)
+  const context = useRef<CanvasRenderingContext2D | null>(null)
+  const circles = useRef<Circle[]>([])
+  const mousePosition = useRef({ x: 0, y: 0 })
+  const animationFrameId = useRef<number | null>(null)
+  const canvasSize = useRef({ w: 0, h: 0 })
+  const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1
+
+  function resizeCanvas() {
     if (canvasContainerRef.current && canvasRef.current && context.current) {
       circles.current.length = 0
       canvasSize.current.w = canvasContainerRef.current.offsetWidth
@@ -95,11 +56,12 @@ export function Particles({
       canvasRef.current.height = canvasSize.current.h * dpr
       canvasRef.current.style.width = `${canvasSize.current.w}px`
       canvasRef.current.style.height = `${canvasSize.current.h}px`
+      context.current.setTransform(1, 0, 0, 1, 0, 0)
       context.current.scale(dpr, dpr)
     }
   }
 
-  const circleParams = (): Circle => {
+  function circleParams(): Circle {
     const x = Math.floor(Math.random() * canvasSize.current.w)
     const y = Math.floor(Math.random() * canvasSize.current.h)
     const translateX = 0
@@ -126,7 +88,7 @@ export function Particles({
 
   const rgb = hexToRgb(color)
 
-  const drawCircle = (circle: Circle, update = false) => {
+  function drawCircle(circle: Circle, update = false) {
     if (context.current) {
       const { x, y, translateX, translateY, size, alpha } = circle
       context.current.translate(translateX, translateY)
@@ -142,13 +104,13 @@ export function Particles({
     }
   }
 
-  const clearContext = () => {
+  function clearContext() {
     if (context.current) {
       context.current.clearRect(0, 0, canvasSize.current.w, canvasSize.current.h)
     }
   }
 
-  const drawParticles = () => {
+  function drawParticles() {
     clearContext()
     const particleCount = quantity
     for (let i = 0; i < particleCount; i++) {
@@ -157,12 +119,17 @@ export function Particles({
     }
   }
 
-  const remapValue = (value: number, start1: number, end1: number, start2: number, end2: number): number => {
+  function initCanvas() {
+    resizeCanvas()
+    drawParticles()
+  }
+
+  function remapValue(value: number, start1: number, end1: number, start2: number, end2: number): number {
     const remapped = ((value - start1) * (end2 - start2)) / (end1 - start1) + start2
     return remapped > 0 ? remapped : 0
   }
 
-  const animate = () => {
+  function animate() {
     clearContext()
     circles.current.forEach((circle: Circle, i: number) => {
       // Handle the alpha value
@@ -213,8 +180,39 @@ export function Particles({
         )
       }
     })
-    window.requestAnimationFrame(animate)
+    animationFrameId.current = window.requestAnimationFrame(animate)
   }
+
+  useEffect(() => {
+    if (canvasRef.current) {
+      context.current = canvasRef.current.getContext("2d")
+    }
+
+    const onResize = () => {
+      initCanvas()
+    }
+
+    const onPointerMove = (event: PointerEvent) => {
+      if (!canvasRef.current) return
+      const rect = canvasRef.current.getBoundingClientRect()
+      mousePosition.current.x = event.clientX - rect.left - canvasSize.current.w / 2
+      mousePosition.current.y = event.clientY - rect.top - canvasSize.current.h / 2
+    }
+
+    initCanvas()
+    animate()
+    window.addEventListener("resize", onResize)
+    window.addEventListener("pointermove", onPointerMove)
+
+    return () => {
+      window.removeEventListener("resize", onResize)
+      window.removeEventListener("pointermove", onPointerMove)
+      if (animationFrameId.current !== null) {
+        window.cancelAnimationFrame(animationFrameId.current)
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [color, quantity, staticity, ease, size, refresh, vx, vy])
 
   return (
     <div className={className} ref={canvasContainerRef} aria-hidden="true">

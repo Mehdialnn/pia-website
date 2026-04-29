@@ -28,7 +28,7 @@ export default function TermsOfService() {
             </h2>
             <p>
               Permission is granted to temporarily download one copy of the
-              materials (information or software) on pia's website for personal,
+              materials (information or software) on pia&apos;s website for personal,
               non-commercial transitory viewing only. This is the grant of a
               license, not a transfer of title, and under this license you may
               not:
@@ -41,14 +41,14 @@ export default function TermsOfService() {
               </li>
               <li>
                 attempt to decompile or reverse engineer any software contained
-                on pia's website;
+                on pia&apos;s website;
               </li>
               <li>
                 remove any copyright or other proprietary notations from the
                 materials; or
               </li>
               <li>
-                transfer the materials to another person or "mirror" the
+                transfer the materials to another person or &quot;mirror&quot; the
                 materials on any other server.
               </li>
             </ul>
@@ -59,7 +59,7 @@ export default function TermsOfService() {
               3. Disclaimer
             </h2>
             <p>
-              The materials on pia's website are provided on an 'as is' basis.
+              The materials on pia&apos;s website are provided on an &apos;as is&apos; basis.
               pia makes no warranties, expressed or implied, and hereby
               disclaims and negates all other warranties including, without
               limitation, implied warranties or conditions of merchantability,
@@ -76,7 +76,7 @@ export default function TermsOfService() {
               In no event shall pia or its suppliers be liable for any damages
               (including, without limitation, damages for loss of data or
               profit, or due to business interruption) arising out of the use or
-              inability to use the materials on pia's website, even if pia or a
+              inability to use the materials on pia&apos;s website, even if pia or a
               pia authorized representative has been notified orally or in
               writing of the possibility of such damage.
             </p>

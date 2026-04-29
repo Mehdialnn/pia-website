@@ -15,10 +15,13 @@ export default function ScrollFadeIn({ children, delay = 0, className = "" }: Sc
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    let timeoutId: ReturnType<typeof setTimeout> | null = null
+    const currentRef = ref.current
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
+          timeoutId = setTimeout(() => {
             setIsVisible(true)
           }, delay)
           observer.unobserve(entry.target)
@@ -30,13 +33,16 @@ export default function ScrollFadeIn({ children, delay = 0, className = "" }: Sc
       },
     )
 
-    if (ref.current) {
-      observer.observe(ref.current)
+    if (currentRef) {
+      observer.observe(currentRef)
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current)
+      if (timeoutId) {
+        clearTimeout(timeoutId)
+      }
+      if (currentRef) {
+        observer.unobserve(currentRef)
       }
     }
   }, [delay])

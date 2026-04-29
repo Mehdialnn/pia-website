@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function DashboardSection() {
   return (
@@ -9,9 +10,11 @@ export default function DashboardSection() {
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-br from-pink-500 to-rose-600 rounded-[3rem] blur-3xl opacity-40 group-hover:opacity-60 transition-opacity" />
               <div className="relative w-72 sm:w-80 rounded-[3rem] overflow-hidden shadow-2xl">
-                <img
+                <Image
                   src="/images/app-transactions.png"
                   alt="PIA Transactions Screen"
+                  width={320}
+                  height={650}
                   className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(236,72,153,0.3)]"
                 />
               </div>

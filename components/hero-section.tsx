@@ -21,9 +21,11 @@ export default function HeroSection() {
 
       <div className="relative z-10 container mx-auto px-6 pt-32 pb-20 text-center">
         <div className="flex justify-center mb-8 animate-fade-in">
-          <img
+          <Image
             src="/images/piacall-logo.png"
             alt="pia Logo"
+            width={128}
+            height={128}
             className="w-24 h-24 md:w-32 md:h-32 drop-shadow-[0_0_30px_rgba(236,72,153,0.6)]"
           />
         </div>

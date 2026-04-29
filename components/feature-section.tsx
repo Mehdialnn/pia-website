@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function FeatureSection() {
   return (
@@ -50,11 +51,7 @@ export default function FeatureSection() {
               <div className="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 transform rotate-2 hover:rotate-0 transition-transform duration-500 min-w-[420px] sm:min-w-0 mx-auto">
                 <div className="bg-zinc-800 px-4 sm:px-6 py-4 flex items-center justify-between border-b border-zinc-700">
                   <div className="flex items-center gap-3">
-                    <img
-                      src="/images/piacall-logo.png"
-                      alt="PIA"
-                      className="w-8 h-8 object-contain"
-                    />
+                    <Image src="/images/piacall-logo.png" alt="PIA" width={32} height={32} className="w-8 h-8 object-contain" />
                     <span className="text-white font-semibold">PIA</span>
                   </div>
                   <div className="flex items-center gap-2">
@@ -70,11 +67,7 @@ export default function FeatureSection() {
                 <div className="flex">
                   <div className="w-40 sm:w-48 bg-zinc-800 p-4 border-r border-zinc-700">
                     <div className="flex items-center gap-3 mb-6">
-                      <img
-                        src="/images/piacall-logo.png"
-                        alt="PIA"
-                        className="w-10 h-10 object-contain"
-                      />
+                      <Image src="/images/piacall-logo.png" alt="PIA" width={40} height={40} className="w-10 h-10 object-contain" />
                       <div>
                         <p className="text-white text-sm font-semibold">
                           Your Profile

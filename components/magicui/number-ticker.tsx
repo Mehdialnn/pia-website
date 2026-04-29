@@ -20,6 +20,8 @@ export default function NumberTicker({
   startValue?: number
 }) {
   const ref = useRef<HTMLSpanElement>(null)
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const [displayValue, setDisplayValue] = useState(direction === "down" ? value : startValue)
   const [hasAnimated, setHasAnimated] = useState(false)
 
@@ -29,25 +31,29 @@ export default function NumberTicker({
         entries.forEach((entry) => {
           if (entry.isIntersecting && !hasAnimated) {
             setHasAnimated(true)
+            const fromValue = direction === "down" ? value : startValue
+            setDisplayValue(fromValue)
 
-            setTimeout(() => {
+            timeoutRef.current = setTimeout(() => {
               const targetValue = direction === "down" ? startValue : value
               const duration = 2000
               const steps = 60
-              const increment = (targetValue - displayValue) / steps
+              const increment = (targetValue - fromValue) / steps
               let currentStep = 0
+              let currentValue = fromValue
 
-              const timer = setInterval(() => {
+              intervalRef.current = setInterval(() => {
                 currentStep++
                 if (currentStep >= steps) {
                   setDisplayValue(targetValue)
-                  clearInterval(timer)
+                  if (intervalRef.current) {
+                    clearInterval(intervalRef.current)
+                  }
                 } else {
-                  setDisplayValue((prev) => prev + increment)
+                  currentValue += increment
+                  setDisplayValue(currentValue)
                 }
               }, duration / steps)
-
-              return () => clearInterval(timer)
             }, delay * 1000)
           }
         })
@@ -59,8 +65,16 @@ export default function NumberTicker({
       observer.observe(ref.current)
     }
 
-    return () => observer.disconnect()
-  }, [value, direction, startValue, delay, displayValue, hasAnimated])
+    return () => {
+      observer.disconnect()
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+      }
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current)
+      }
+    }
+  }, [value, direction, startValue, delay, hasAnimated])
 
   return (
     <span className={cn("inline-block tabular-nums text-black dark:text-white tracking-wider", className)} ref={ref}>
