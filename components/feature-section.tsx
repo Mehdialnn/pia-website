@@ -1,134 +1,110 @@
-import { Check } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
+const APP_STORE_URL =
+  "https://apps.apple.com/fr/app/pia-monetize-your-calls/id6760731972";
+
+function MinimalContent() {
+  return (
+    <div className="text-left px-4 sm:px-0">
+      <p className="text-xs uppercase tracking-[0.2em] text-zinc-500 mb-4">
+        Creator Operations
+      </p>
+
+      <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold text-white mb-4 sm:mb-6 leading-tight">
+        Run Your Calls
+        <br />
+        <span className="text-zinc-400 font-light">Without Tool Sprawl</span>
+      </h2>
+      <p className="text-base sm:text-lg text-zinc-400 mb-6 sm:mb-8 leading-relaxed max-w-xl">
+        One app for scheduling, sessions, and payouts. No fragmented workflow,
+        no manual handoffs, no missed revenue moments.
+      </p>
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6 sm:mb-8">
+        <div className="rounded-xl border border-zinc-800 bg-zinc-900/80 px-3 py-3">
+          <p className="text-[11px] text-zinc-500">Bookings</p>
+          <p className="text-sm text-white font-medium">Auto-managed</p>
+        </div>
+        <div className="rounded-xl border border-zinc-800 bg-zinc-900/80 px-3 py-3">
+          <p className="text-[11px] text-zinc-500">Calls</p>
+          <p className="text-sm text-white font-medium">Voice + video</p>
+        </div>
+        <div className="rounded-xl border border-zinc-800 bg-zinc-900/80 px-3 py-3">
+          <p className="text-[11px] text-zinc-500">Payouts</p>
+          <p className="text-sm text-white font-medium">Fast & secure</p>
+        </div>
+      </div>
+
+      <Link target="_blank" rel="noopener noreferrer" href={APP_STORE_URL}>
+        <button className="cursor-pointer px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-sm sm:text-base font-medium rounded-lg hover:opacity-90 transition-all duration-300 w-full sm:w-auto">
+          Download pia for iOS
+        </button>
+      </Link>
+    </div>
+  );
+}
+
+function FeatureVisual() {
+  return (
+    <div className="relative px-4 sm:px-0">
+      <div className="sm:hidden relative mx-auto max-w-sm space-y-4">
+        <div className="absolute inset-x-6 top-6 h-40 bg-gradient-to-br from-pink-500 to-rose-600 rounded-[2rem] blur-3xl opacity-35" />
+        <div className="relative rounded-[2rem] border border-zinc-800 bg-zinc-900 p-4">
+          <Image
+            src="/images/app-dashboard.png"
+            alt="pia App Dashboard"
+            width={360}
+            height={720}
+            className="w-full h-auto object-contain rounded-[1.5rem]"
+          />
+        </div>
+        <div className="grid grid-cols-2 gap-3">
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-3 py-2">
+            <p className="text-[11px] text-zinc-500">Payouts</p>
+            <p className="text-sm text-white font-medium">Fast & secure</p>
+          </div>
+          <div className="rounded-xl border border-zinc-800 bg-zinc-900 px-3 py-2">
+            <p className="text-[11px] text-zinc-500">Calls</p>
+            <p className="text-sm text-white font-medium">Voice + video</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="hidden sm:block relative max-w-xl ml-auto">
+        <div className="absolute right-4 top-10 w-56 h-56 bg-gradient-to-br from-pink-500 to-rose-600 rounded-full blur-3xl opacity-35" />
+        <div className="relative flex items-end justify-end gap-4">
+          <div className="relative w-[230px] md:w-[250px] translate-y-6">
+            <Image
+              src="/images/app-settings.png"
+              alt="pia settings screen"
+              width={250}
+              height={520}
+              className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(236,72,153,0.25)]"
+            />
+          </div>
+          <div className="relative w-[260px] md:w-[290px]">
+            <Image
+              src="/images/app-dashboard.png"
+              alt="pia dashboard screen"
+              width={290}
+              height={600}
+              className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(236,72,153,0.35)]"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function FeatureSection() {
   return (
-    <section className="bg-[#0A0A0A] py-24 px-6">
+    <section className="bg-[#0A0A0A] py-20 sm:py-24 lg:py-28 px-4 sm:px-6">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center max-w-7xl mx-auto">
-          <div className="text-left px-4 sm:px-0">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-              Easy Scheduling,
-              <br />
-              Zero Hassle
-            </h2>
-            <p className="text-base sm:text-lg text-zinc-400 mb-6 sm:mb-8 leading-relaxed">
-              Let clients book calls at your available times. Automatic
-              reminders, calendar sync, and seamless payment processing.
-            </p>
-
-            <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-              <li className="flex items-center gap-3 text-white text-base sm:text-lg">
-                <Check className="w-5 h-5 text-pink-400" />
-                Custom booking links
-              </li>
-              <li className="flex items-center gap-3 text-white text-base sm:text-lg">
-                <Check className="w-5 h-5 text-pink-400" />
-                Integrated payments
-              </li>
-              <li className="flex items-center gap-3 text-white text-base sm:text-lg">
-                <Check className="w-5 h-5 text-pink-400" />
-                Video & voice calls
-              </li>
-            </ul>
-
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://piacall.io/"
-            >
-              <button className="cursor-pointer px-6 sm:px-8 py-3 sm:py-4 bg-zinc-900 text-white text-sm sm:text-base font-medium rounded-lg border border-zinc-700 hover:bg-zinc-800 transition-all duration-300 hover:border-zinc-600 w-full sm:w-auto">
-                Start Earning Today
-              </button>
-            </Link>
-          </div>
-
-          {/* MOCKUP SIDE */}
-          <div className="relative perspective-1000 px-4 sm:px-0">
-            {/* 👇 wrapper pour scroll horizontal sur mobile */}
-            <div className="max-w-full overflow-x-auto">
-              <div className="bg-zinc-900 rounded-3xl overflow-hidden border border-zinc-800 transform rotate-2 hover:rotate-0 transition-transform duration-500 min-w-[420px] sm:min-w-0 mx-auto">
-                <div className="bg-zinc-800 px-4 sm:px-6 py-4 flex items-center justify-between border-b border-zinc-700">
-                  <div className="flex items-center gap-3">
-                    <Image src="/images/piacall-logo.png" alt="PIA" width={32} height={32} className="w-8 h-8 object-contain" />
-                    <span className="text-white font-semibold">PIA</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="w-32 sm:w-40 h-8 bg-zinc-700 rounded-lg px-3 flex items-center">
-                      <span className="text-zinc-400 text-xs sm:text-sm">
-                        Search...
-                      </span>
-                    </div>
-                    <div className="w-8 h-8 bg-zinc-700 rounded-full" />
-                  </div>
-                </div>
-
-                <div className="flex">
-                  <div className="w-40 sm:w-48 bg-zinc-800 p-4 border-r border-zinc-700">
-                    <div className="flex items-center gap-3 mb-6">
-                      <Image src="/images/piacall-logo.png" alt="PIA" width={40} height={40} className="w-10 h-10 object-contain" />
-                      <div>
-                        <p className="text-white text-sm font-semibold">
-                          Your Profile
-                        </p>
-                      </div>
-                    </div>
-
-                    <nav className="space-y-2">
-                      <div className="px-3 py-2 bg-pink-500/20 rounded-lg text-pink-400 text-sm font-medium">
-                        Dashboard
-                      </div>
-                      <div className="px-3 py-2 text-zinc-400 text-sm hover:text-white transition-colors">
-                        Bookings
-                      </div>
-                      <div className="px-3 py-2 text-zinc-400 text-sm hover:text-white transition-colors">
-                        Earnings
-                      </div>
-                      <div className="px-3 py-2 text-zinc-400 text-sm hover:text-white transition-colors">
-                        Settings
-                      </div>
-                    </nav>
-                  </div>
-
-                  <div className="flex-1 p-4 sm:p-6">
-                    {/* 👇 1 colonne sur mobile, 2 colonnes à partir de sm */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                      <div className="bg-zinc-800 p-4 rounded-xl border border-zinc-700">
-                        <p className="text-zinc-400 text-xs mb-1">This Week</p>
-                        <p className="text-white text-xl font-bold">
-                          12 <span className="text-pink-400">Calls</span>
-                        </p>
-                      </div>
-                      <div className="bg-zinc-800 p-4 rounded-xl border border-zinc-700">
-                        <p className="text-zinc-400 text-xs mb-1">Revenue</p>
-                        <p className="text-white text-xl font-bold">
-                          $840 <span className="text-pink-400">USD</span>
-                        </p>
-                      </div>
-                    </div>
-
-                    <div>
-                      <p className="text-zinc-400 text-sm mb-3">
-                        Earnings Trend
-                      </p>
-                      <div className="h-32 bg-zinc-800/50 rounded-lg p-4 relative overflow-hidden">
-                        <svg className="w-full h-full" viewBox="0 0 200 80">
-                          <polyline
-                            fill="none"
-                            stroke="#ec4899"
-                            strokeWidth="2"
-                            points="0,60 20,55 40,50 60,45 80,40 100,35 120,30 140,25 160,30 180,35 200,30"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* END MOCKUP SIDE */}
+          <MinimalContent />
+          <FeatureVisual />
         </div>
       </div>
     </section>

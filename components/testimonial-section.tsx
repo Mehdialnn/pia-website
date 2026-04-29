@@ -49,14 +49,16 @@ const TestimonialCard = ({
   name,
   role,
   initial,
+  className = "",
 }: {
   quote: string
   name: string
   role: string
   initial: string
+  className?: string
 }) => {
   return (
-    <figure className="relative w-80 cursor-pointer overflow-hidden rounded-xl border border-zinc-800 bg-[#1A1A1A] p-6 hover:bg-[#1F1F1F] transition-colors">
+    <figure className={`relative w-80 cursor-pointer overflow-hidden rounded-xl border border-zinc-800 bg-[#1A1A1A] p-6 hover:bg-[#1F1F1F] transition-colors ${className}`}>
       <div className="flex flex-col gap-4">
         <blockquote className="text-white text-lg font-medium leading-relaxed">{quote}</blockquote>
         <div className="flex items-center gap-3">
@@ -75,7 +77,7 @@ const TestimonialCard = ({
 
 export default function TestimonialSection() {
   return (
-    <section className="bg-[#0A0A0A] py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
+    <section className="bg-[#0A0A0A] py-20 sm:py-24 lg:py-28 px-4 sm:px-6">
       <div className="container mx-auto">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
@@ -86,13 +88,21 @@ export default function TestimonialSection() {
           <p className="text-base sm:text-lg text-zinc-400">See what professionals are saying about PIA</p>
         </div>
 
-        <div className="relative flex flex-col items-center justify-center overflow-hidden">
-          <Marquee pauseOnHover className="[--duration:40s]">
+        <div className="md:hidden -mx-4 px-4 overflow-x-auto pb-2">
+          <div className="flex gap-4 snap-x snap-mandatory">
+            {testimonials.map((testimonial, idx) => (
+              <TestimonialCard key={idx} {...testimonial} className="w-[82vw] max-w-sm shrink-0 snap-start cursor-default" />
+            ))}
+          </div>
+        </div>
+
+        <div className="relative hidden md:flex flex-col items-center justify-center overflow-hidden">
+          <Marquee pauseOnHover className="[--duration:48s]">
             {firstRow.map((testimonial, idx) => (
               <TestimonialCard key={idx} {...testimonial} />
             ))}
           </Marquee>
-          <Marquee reverse pauseOnHover className="[--duration:40s] mt-2 sm:mt-4">
+          <Marquee reverse pauseOnHover className="[--duration:48s] mt-4">
             {secondRow.map((testimonial, idx) => (
               <TestimonialCard key={idx} {...testimonial} />
             ))}

@@ -46,7 +46,7 @@ export default function HeroSection() {
           <Link
             target="_blank"
             rel="noopener noreferrer"
-            href="https://piacall.io/"
+            href="https://apps.apple.com/fr/app/pia-monetize-your-calls/id6760731972"
           >
             <ShimmerButton
               shimmerColor="#ffffff"
@@ -56,10 +56,11 @@ export default function HeroSection() {
               background="linear-gradient(to right, #ec4899, #f43f5e)"
               className="shadow-2xl"
             >
-              Try pia Now
+              Download on the App Store
             </ShimmerButton>
           </Link>
         </div>
+        <p className="mt-4 text-sm text-zinc-500">Now live on iOS.</p>
       </div>
 
       <div className="relative z-10 flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-16 px-6 pb-8 lg:pb-16 mt-8 lg:mt-12 flex-wrap">

@@ -2,7 +2,7 @@ import { Particles } from "@/components/magicui/particles"
 
 export default function CTABanner() {
   return (
-    <section className="bg-black py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
+    <section className="bg-[#0A0A0A] py-20 sm:py-24 lg:py-28 px-4 sm:px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="bg-[#1A1A1A] rounded-2xl sm:rounded-3xl px-6 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-20 text-center relative overflow-hidden">
           <Particles
@@ -36,13 +36,13 @@ export default function CTABanner() {
               Join thousands of professionals monetizing their time with PIA
             </p>
             <div className="flex flex-col items-center gap-4">
-              <p className="text-center text-lg sm:text-2xl font-normal text-white">Get the app on iOS and Android</p>
+              <p className="text-center text-lg sm:text-2xl font-normal text-white">Download pia on iOS</p>
               <div className="w-full flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex w-full sm:w-fit flex-row items-center justify-center gap-2 sm:gap-3 rounded-2xl border border-zinc-700 px-4 py-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-pink-500/50 text-white bg-zinc-900/50 backdrop-blur-sm"
-                  href="https://www.apple.com/app-store/"
+                  href="https://apps.apple.com/fr/app/pia-monetize-your-calls/id6760731972"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -61,11 +61,9 @@ export default function CTABanner() {
                     <p className="text-lg sm:text-xl font-semibold">App Store</p>
                   </div>
                 </a>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex w-full sm:w-fit flex-row items-center justify-center gap-2 sm:gap-3 rounded-2xl border border-zinc-700 px-4 py-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-pink-500/50 text-white bg-zinc-900/50 backdrop-blur-sm"
-                  href="https://play.google.com/store/apps"
+                <div
+                  aria-disabled="true"
+                  className="flex w-full sm:w-fit flex-row items-center justify-center gap-2 sm:gap-3 rounded-2xl border border-zinc-700/70 px-4 py-3 text-zinc-400 bg-zinc-900/30 backdrop-blur-sm cursor-not-allowed"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -80,11 +78,17 @@ export default function CTABanner() {
                     />
                   </svg>
                   <div className="grid -space-y-1 text-left">
-                    <p className="text-xs text-zinc-400">GET IT ON</p>
-                    <p className="text-lg sm:text-xl font-semibold">Google Play</p>
+                    <p className="text-xs text-zinc-500">ANDROID</p>
+                    <p className="text-lg sm:text-xl font-semibold">Not Available Yet</p>
                   </div>
-                </a>
+                </div>
               </div>
+              <a
+                href="mailto:marion@piacall.io?subject=Notify%20me%20for%20Android&body=Hi%20PIA%20team%2C%20please%20notify%20me%20when%20the%20Android%20app%20is%20available."
+                className="text-sm text-zinc-400 hover:text-white transition-colors underline underline-offset-4"
+              >
+                Notify me when Android launches
+              </a>
             </div>
           </div>
         </div>

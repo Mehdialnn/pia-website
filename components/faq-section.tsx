@@ -30,7 +30,7 @@ export default function FAQSection() {
   ]
 
   return (
-    <section className="bg-[#0A0A0A] py-16 sm:py-20 lg:py-24 px-4 sm:px-6">
+    <section className="bg-[#0A0A0A] py-20 sm:py-24 lg:py-28 px-4 sm:px-6">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function DashboardSection() {
   return (
-    <section className="bg-[#050505] py-24 px-6">
+    <section className="bg-[#0A0A0A] py-20 sm:py-24 lg:py-28 px-4 sm:px-6">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center max-w-7xl mx-auto">
           <div className="relative flex justify-center">

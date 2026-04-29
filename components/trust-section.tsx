@@ -5,7 +5,7 @@ import Image from "next/image"
 
 export default function TrustSection() {
   return (
-    <section className="relative py-8 sm:py-12 border-y border-zinc-800/50">
+    <section className="relative bg-[#0A0A0A] py-10 sm:py-14 border-y border-zinc-800/50">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col items-center gap-6 sm:gap-8">
           {/* Trust Headline */}
