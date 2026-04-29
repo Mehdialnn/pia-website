@@ -52,8 +52,8 @@ function FeatureVisual() {
         <div className="absolute inset-x-6 top-6 h-40 bg-gradient-to-br from-pink-500 to-rose-600 rounded-[2rem] blur-3xl opacity-35" />
         <div className="relative rounded-[2rem] border border-zinc-800 bg-zinc-900 p-4">
           <Image
-            src="/images/app-dashboard.png"
-            alt="Pia App Dashboard"
+            src="/images/app-transactions.png"
+            alt="Pia Transactions Screen"
             width={360}
             height={720}
             className="w-full h-auto object-contain rounded-[1.5rem]"
@@ -76,8 +76,8 @@ function FeatureVisual() {
         <div className="relative flex items-end justify-end gap-4">
           <div className="relative w-[230px] md:w-[250px] translate-y-6">
             <Image
-              src="/images/app-settings.png"
-              alt="Pia settings screen"
+              src="/images/app-transactions.png"
+              alt="Pia transactions screen"
               width={250}
               height={520}
               className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(236,72,153,0.25)]"
@@ -85,8 +85,8 @@ function FeatureVisual() {
           </div>
           <div className="relative w-[260px] md:w-[290px]">
             <Image
-              src="/images/app-dashboard.png"
-              alt="Pia dashboard screen"
+              src="/images/app-settings.png"
+              alt="Pia settings screen"
               width={290}
               height={600}
               className="w-full h-auto object-contain drop-shadow-[0_0_30px_rgba(236,72,153,0.35)]"

@@ -1,6 +1,5 @@
 import HeroSection from "@/components/hero-section";
 import StatsSection from "@/components/stats-section";
-import DashboardSection from "@/components/dashboard-section";
 import FeatureSection from "@/components/feature-section";
 import HowItWorksSection from "@/components/how-it-works-section";
 import TestimonialSection from "@/components/testimonial-section";
@@ -17,9 +16,6 @@ export default function Page() {
       <TrustSection />
       <ScrollFadeIn>
         <StatsSection />
-      </ScrollFadeIn>
-      <ScrollFadeIn delay={100}>
-        <DashboardSection />
       </ScrollFadeIn>
       <ScrollFadeIn delay={100}>
         <FeatureSection />
