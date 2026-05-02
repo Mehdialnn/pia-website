@@ -46,24 +46,33 @@ export default function HeroSection() {
             </p>
 
             <div className="flex justify-center lg:justify-start">
-              <Link
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://apps.apple.com/fr/app/pia-monetize-your-calls/id6760731972"
-              >
-                <ShimmerButton
-                  shimmerColor="#ffffff"
-                  shimmerSize="0.1em"
-                  shimmerDuration="2s"
-                  borderRadius="9999px"
-                  background="linear-gradient(to right, #ec4899, #f43f5e)"
-                  className="shadow-2xl"
+              <div className="inline-flex flex-col items-center">
+                <Link
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://apps.apple.com/fr/app/pia-monetize-your-calls/id6760731972"
                 >
-                  Download on the App Store
-                </ShimmerButton>
-              </Link>
+                  <ShimmerButton
+                    shimmerColor="#ffffff"
+                    shimmerSize="0.1em"
+                    shimmerDuration="2s"
+                    borderRadius="9999px"
+                    background="linear-gradient(to right, #ec4899, #f43f5e)"
+                    className="shadow-2xl"
+                  >
+                    Download on the App Store
+                  </ShimmerButton>
+                </Link>
+                <Link
+                  href="https://piacall.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 text-sm text-zinc-400 hover:text-white transition-colors underline underline-offset-4"
+                >
+                  Use web version
+                </Link>
+              </div>
             </div>
-            <p className="mt-3 text-sm text-zinc-500">Now live on iOS.</p>
           </div>
 
           <div className="relative flex justify-center lg:justify-center">
